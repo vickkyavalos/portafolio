@@ -1,6 +1,6 @@
-# 🌐 Portfolio Personal - Vicky Avalos
+# 🌐 Portfolio
 
-Este es mi portfolio personal desarrollado con **Vue.js** y **Tailwind CSS**. Acá muestro información sobre mí, mis proyectos, habilidades técnicas, estudios y formas de contacto. Fue creado con el objetivo de centralizar todo lo que soy y hago como desarrolladora web.
+Este es mi portfolio personal desarrollado con **Vue.js** y **Tailwind CSS**. Acá muestro información sobre mí, mis proyectos, habilidades técnicas, estudios y formas de contacto.
 
 ## 🏠 Inicio
 
