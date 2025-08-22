@@ -37,9 +37,6 @@ Formulario o medios para contactarme:
 
 ## 🧰 Tecnologías utilizadas
 
-- [Vue.js]
 - [Tailwind CSS]
-- [Vite]
-- [Node.js]
 - [Git]
 
