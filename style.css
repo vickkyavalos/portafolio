@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Quicksand:wght@300..700&display=swap');
+
+:root{
+    --color-fondo: #252422;
+    --colorLetras:  #FFFF;
+    --colorTitulo: #FB6F92;
+    --colorRosa: #FFAFCC;
+    --colorSecundario: #A49898;
+    --letraPrincipal: "Quicksand", sans-serif;
+    --letraTitulo:"Handjet", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+/*body*/
+body{
+    background-color: var(--color-fondo);
+}
+/* navbar */
+.navegacion{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    color: var(--colorLetras);
+    font-family: var(--letraPrincipal);
+    font-size: 20px;
+    padding: 5px;
+    text-decoration: none;
+    text-decoration-style: none;
+}
+.navegacion:hover{
+    color: var(--colorTitulo);
+}
+
+/* main */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px; 
+    flex-direction: column;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.principal{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; 
+    padding: 50px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+/*textos*/
+h1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--colorTitulo);
+    font-family: var(--letraTitulo);
+    font-size: 150px;
+    word-spacing: 25px; 
+}
+.letra{
+    align-items: center;
+    padding: 10px;
+    color: var(--colorLetras);
+    font-family: var(--letraPrincipal);
+    font-size: 18px;
+    padding: 5px;
+}
+.titulo{
+    display: flex;
+    color: var(--colorLetras);
+    font-family: var(--letraTitulo);
+    font-size: 48px;
+    word-spacing: 10px; 
+    margin: 20px;
+}
+
+.imagenIlustrativa{
+    width: 250px;
+}
+
+.fondoRosita{
+    width: fit-content;
+    height: fit-content;
+    background-color: #FFAFCC;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
