@@ -35,8 +35,3 @@ Formulario o medios para contactarme:
 
 -  Correo electrónico, LinkedIn, GitHub
 
-## 🧰 Tecnologías utilizadas
-
-- [Tailwind CSS]
-- [Git]
-
