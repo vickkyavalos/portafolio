@@ -1,0 +1,61 @@
+# ...existing code...
+
+# Sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Output / builds
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vite/
+.vdist/
+
+# Entornos / secretos
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Tests / coverage
+coverage/
+.nyc_output/
+
+# IDEs / editores
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.xcodeproj
+*.xcworkspace
+
+# Python (si aplica)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Otros
+*.bak
+*.tmp
+*.swp
+.DS_Store
+
+# OneDrive / sincronización temporal
+OneDriveTemp/
