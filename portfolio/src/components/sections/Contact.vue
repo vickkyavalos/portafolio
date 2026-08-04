@@ -141,6 +141,7 @@ const validateForm = (e) => {
   display: block;
 }
 .social-links a:hover {
+  color: var(--color-claro);
   text-decoration: underline;
 }
 
@@ -192,7 +193,7 @@ input:focus, textarea:focus {
   width: 100%;
 }
 .submit-btn:hover {
-  background: #0ea5e9;
+  background: var(--color-claro);
   transform: translateY(-2px);
 }
 </style>

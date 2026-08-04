@@ -7,7 +7,7 @@
       <h2 class="section-title">Formación & Certificaciones</h2>
       <div class="education-item">
         <h3>Técnico en Desarrollo Web y Aplicaciones Digitales</h3>
-        <p class="date">Título Analítico Oficial - 2024</p>
+        <p class="date"></p>
       </div>
 
       <div class="education-item">

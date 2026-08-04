@@ -80,7 +80,7 @@ onMounted(() => {
   transition: all 0.3s ease;
 }
 .project-card:hover {
-  border-color: var(--accent-color);
+  border-color: var(--color-claro);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -114,6 +114,6 @@ p {
   font-weight: bold;
 }
 .btn-link:hover {
-  color: var(--accent-color);
+  color: var(--color-claro);
 }
 </style>
