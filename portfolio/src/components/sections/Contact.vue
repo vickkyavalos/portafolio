@@ -4,13 +4,11 @@ import gsap from 'gsap'
 
 const formRef = ref(null)
 
-
 const formData = ref({
   name: '',
   email: '',
   message: ''
 })
-
 
 const errors = ref({
   name: '',
@@ -18,7 +16,9 @@ const errors = ref({
   message: ''
 })
 
-const validateForm = (e) => {
+const isSubmitting = ref(false)
+
+const validateForm = async (e) => {
   e.preventDefault()
   let isValid = true
   
@@ -49,10 +49,33 @@ const validateForm = (e) => {
     return
   }
 
-  alert('¡Mensaje enviado con éxito!')
-  
 
-  formData.value = { name: '', email: '', message: '' }
+  isSubmitting.value = true
+
+  try {
+
+    const formspreeUrl = 'https://formspree.io/f/mljrdlwv'
+
+    const response = await fetch(formspreeUrl, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData.value)
+    })
+
+    if (response.ok) {
+      alert('¡Mensaje enviado con éxito!')
+      formData.value = { name: '', email: '', message: '' }
+    } else {
+      alert('Hubo un problema al enviar el formulario. Intentá nuevamente.')
+    }
+  } catch (error) {
+    alert('Error de conexión. Por favor, revisá tu internet e intentá nuevamente.')
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -102,7 +125,9 @@ const validateForm = (e) => {
             <span class="error-text" v-if="errors.message">{{ errors.message }}</span>
           </div>
 
-          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+          <button type="submit" class="submit-btn" :disabled="isSubmitting">
+            {{ isSubmitting ? 'Enviando...' : 'Enviar Mensaje' }}
+          </button>
         </form>
       </div>
     </div>
@@ -192,8 +217,12 @@ input:focus, textarea:focus {
   transition: transform 0.2s, background 0.3s;
   width: 100%;
 }
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: var(--color-claro);
   transform: translateY(-2px);
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 </style>
