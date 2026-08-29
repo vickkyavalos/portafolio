@@ -43,19 +43,29 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; 
+  position: relative;
+  padding: 4rem 0 2rem;
 }
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
-  gap: 2rem;
-  width: 100%;
+  gap: clamp(1rem, 3vw, 3rem);
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: clamp(1.3rem, 2vw, 2rem);
   font-weight: 500;
   letter-spacing: 1px;
   color: var(--text-main);
@@ -63,16 +73,16 @@ onMounted(() => {
 }
 
 .title {
-  font-size: 8rem; 
-  line-height: 1.1;
-  color: #ff8fb3; 
-  text-shadow: 2px 2px 0px #fff; 
+  font-size: clamp(4rem, 7vw, 8rem);
+  line-height: 0.9;
+  color: var(--accent-color);
+  text-shadow: 2px 2px 0px var(--color-claro);
+  margin: 0;
 }
-
 
 .hero-image {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .image-placeholder {
@@ -82,13 +92,11 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
 }
 
 .image-placeholder img {
   display: block;
-  width: 100%;
-  max-width: 450px;
+  width: min(100%, 420px);
   height: auto;
   margin: 0;
 }
@@ -96,24 +104,24 @@ onMounted(() => {
 .textofoto {
   font-family: "Handjet", sans-serif;
   text-align: center;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   line-height: 1;
-  margin: -0.4rem 0 0;
+  margin: -0.3rem 0 0;
 }
 
 .hero-action {
   position: absolute;
-  bottom: 80px; 
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .btn-projects {
   display: inline-block;
-  background-color: #ff8fb3; 
+  background-color: var(--accent-color);
   color: #1a1a1a;
   padding: 12px 40px;
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
   border-radius: 8px;
   text-decoration: none;
   transition: transform 0.2s, background-color 0.2s;
@@ -125,19 +133,64 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 80px 0 40px;
+    justify-content: center;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3rem;
+    justify-items: center; 
+    gap: 2rem; 
+    width: 100%;
+    padding: 1rem;
   }
+
+  .hero-text {
+    order: 1;
+    align-items: center;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
   .title {
-    font-size: 4rem;
+    font-size: clamp(3.5rem, 15vw, 5rem);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
   }
+
+  .hero-image {
+    order: 2;
+    width: 100%;
+  }
+
+  .image-placeholder {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .textofoto {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+  }
+
   .hero-action {
     position: static;
     transform: none;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-projects {
+    padding: 12px 32px;
+    font-size: 1.2rem;
   }
 }
 </style>

@@ -16,7 +16,7 @@ export const projectList = [
   {
     id: 3,
     title: 'heart-ily',
-    description: 'Título: corazón latiendo. Corazón latiendo con frase a especificar.',
+    description: 'Corazón latiendo con frase a especificar.',
     technologies: ['CSS', 'Animación', 'JS'],
     link: 'https://github.com/vickkyavalos/heart-ily'
   },
