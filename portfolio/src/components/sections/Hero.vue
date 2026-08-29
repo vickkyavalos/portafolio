@@ -24,6 +24,8 @@ onMounted(() => {
 
       <div class="hero-image" ref="imageColRef">
         <div class="image-placeholder">
+          <img src="../../assets/images/pixel me 1.png" width="450px" >
+         <P class="textofoto">Foto en construcción</P>
         </div>
       </div>
       
@@ -76,9 +78,27 @@ onMounted(() => {
 .image-placeholder {
   width: 100%;
   max-width: 450px;
-  aspect-ratio: 4/3;
-  background-color: #9ca3af; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
+}
+
+.image-placeholder img {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin: 0;
+}
+
+.textofoto {
+  font-family: "Handjet", sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1;
+  margin: -0.4rem 0 0;
 }
 
 .hero-action {

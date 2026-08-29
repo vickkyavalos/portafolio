@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { skillsData } from '../../data/skills'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,9 +16,9 @@ onMounted(() => {
     },
     y: 50,
     opacity: 0,
-    duration: 0.6, 
+    duration: 0.6,
     stagger: 0.2,
-    ease: 'back.out(1.5)' 
+    ease: 'back.out(1.5)'
   })
 })
 
@@ -27,7 +28,7 @@ const onHoverEnter = (e) => {
     scale: 1.02,
     duration: 0.3,
     ease: 'power2.out',
-    boxShadow: '0px 0px 20px var(--accent-color)' 
+    boxShadow: '0px 0px 20px var(--accent-color)'
   })
 }
 
@@ -47,34 +48,16 @@ const onHoverLeave = (e) => {
     <div class="container">
       <h2 class="section-title">Habilidades Técnicas</h2>
       <div class="skills-grid">
-        
-        <div 
-          class="skill-card" 
-          @mouseenter="onHoverEnter" 
-          @mouseleave="onHoverLeave"
-        >
-          <h3>Frontend</h3>
-          <p>HTML/CSS, JavaScript, TypeScript, Vue.js, React, Angular, Bootstrap, GSAP.</p>
-        </div>
-
-        <div 
+        <div
+          v-for="skill in skillsData"
+          :key="skill.id"
           class="skill-card"
-          @mouseenter="onHoverEnter" 
+          @mouseenter="onHoverEnter"
           @mouseleave="onHoverLeave"
         >
-          <h3>Backend & Data</h3>
-          <p>Node.js, Express.js, NestJS, Python, Django, PHP, SQL, TypeORM, Spring Boot.</p>
+          <h3>{{ skill.title }}</h3>
+          <p>{{ skill.description }}</p>
         </div>
-
-        <div 
-          class="skill-card"
-          @mouseenter="onHoverEnter" 
-          @mouseleave="onHoverLeave"
-        >
-          <h3>Herramientas & Diseño</h3>
-          <p>Figma, Adobe Illustrator, Affinity Designer, n8n, Git.</p>
-        </div>
-
       </div>
     </div>
   </section>

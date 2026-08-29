@@ -1,28 +1,15 @@
 <script setup>
+import { educationList } from '../../data/education'
 </script>
 
 <template>
   <section id="education" class="education">
     <div class="container">
       <h2 class="section-title">Formación & Certificaciones</h2>
-      <div class="education-item">
-        <h3>Técnico en Desarrollo Web y Aplicaciones Digitales</h3>
-        <p class="date"></p>
-      </div>
 
-      <div class="education-item">
-        <h3>XAcademy Workflow Automation</h3>
-        <p class="date">2025</p>
-      </div>
-
-      <div class="education-item">
-        <h3>Hacking Ético: OF&DF 6.0 - Exercism</h3>
-        <p class="date">2025</p>
-      </div>
-
-      <div class="education-item">
-        <h3>Curso Full Stack Python – Codo a Codo</h3>
-        <p class="date">2023</p>
+      <div v-for="item in educationList" :key="item.id" class="education-item">
+        <h3>{{ item.title }}</h3>
+        <p v-if="item.date" class="date">{{ item.date }}</p>
       </div>
     </div>
   </section>

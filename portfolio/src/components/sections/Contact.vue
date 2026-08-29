@@ -1,88 +1,19 @@
 <script setup>
-import { ref } from 'vue'
-import gsap from 'gsap'
+import { useContactForm } from '../../composables/useContactForm'
 
-const formRef = ref(null)
-
-const formData = ref({
-  name: '',
-  email: '',
-  message: ''
-})
-
-const errors = ref({
-  name: '',
-  email: '',
-  message: ''
-})
-
-const isSubmitting = ref(false)
-
-const validateForm = async (e) => {
-  e.preventDefault()
-  let isValid = true
-  
-  errors.value = { name: '', email: '', message: '' }
-
-  if (!formData.value.name.trim()) {
-    errors.value.name = 'El nombre es obligatorio.'
-    isValid = false
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!formData.value.email.trim() || !emailRegex.test(formData.value.email)) {
-    errors.value.email = 'Por favor, ingresa un correo válido.'
-    isValid = false
-  }
-
-  if (!formData.value.message.trim()) {
-    errors.value.message = 'El mensaje no puede estar vacío.'
-    isValid = false
-  }
-
-  if (!isValid) {
-    gsap.to(formRef.value, { 
-      x: [-10, 10, -10, 10, 0], 
-      duration: 0.4, 
-      ease: "power2.inOut" 
-    })
-    return
-  }
-
-
-  isSubmitting.value = true
-
-  try {
-
-    const formspreeUrl = 'https://formspree.io/f/mljrdlwv'
-
-    const response = await fetch(formspreeUrl, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData.value)
-    })
-
-    if (response.ok) {
-      alert('¡Mensaje enviado con éxito!')
-      formData.value = { name: '', email: '', message: '' }
-    } else {
-      alert('Hubo un problema al enviar el formulario. Intentá nuevamente.')
-    }
-  } catch (error) {
-    alert('Error de conexión. Por favor, revisá tu internet e intentá nuevamente.')
-  } finally {
-    isSubmitting.value = false
-  }
-}
+const {
+  formRef,
+  formData,
+  errors,
+  isSubmitting,
+  validateForm
+} = useContactForm()
 </script>
 
 <template>
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title">Contacto</h2>
       
       <div class="contact-content">
 
