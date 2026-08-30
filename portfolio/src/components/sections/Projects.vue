@@ -43,13 +43,24 @@ onMounted(() => {
 
 <style scoped>
 .projects {
-  padding: 100px 0;
+  padding: 30px 0 60px;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 20px 0 40px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 </style>

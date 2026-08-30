@@ -65,13 +65,15 @@ const onHoverLeave = (e) => {
 
 <style scoped>
 .skills {
-  padding: 100px 0;
+  padding: 48px 0 28px;
 }
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
+
 .skill-card {
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
@@ -97,5 +99,16 @@ h3 {
 }
 p {
   color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 36px 0 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 </style>
