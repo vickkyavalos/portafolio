@@ -11,7 +11,7 @@ export const projectList = [
     title: 'letter',
     description: 'Proyecto sobre una carta romantica que se puede usar como plantilla. Contiene animaciones.',
     technologies: ['CSS', 'Diseño', 'JS'],
-    link: 'https://github.com/vickkyavalos/letter'
+    link: 'https://vickkyavalos.github.io/letter/'
   },
   {
     id: 3,
