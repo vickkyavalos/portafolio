@@ -6,6 +6,7 @@ const {
   formData,
   errors,
   isSubmitting,
+  notification,
   validateForm
 } = useContactForm()
 </script>
@@ -14,13 +15,12 @@ const {
   <section id="contact" class="contact">
     <div class="container">
       <h2 class="section-title">Contacto</h2>
-      
-      <div class="contact-content">
 
+      <div class="contact-content">
         <div class="contact-info">
           <h3>¡Hablemos!</h3>
           <p>Estoy disponible para nuevos proyectos y oportunidades laborales.</p>
-          
+
           <ul class="social-links">
             <li>
               <span class="label">Email:</span>
@@ -54,6 +54,10 @@ const {
             <label for="message">Mensaje</label>
             <textarea id="message" rows="5" v-model="formData.message" :class="{ 'error-input': errors.message }"></textarea>
             <span class="error-text" v-if="errors.message">{{ errors.message }}</span>
+          </div>
+
+          <div v-if="notification.show" :class="['notification', notification.type]" role="status">
+            {{ notification.message }}
           </div>
 
           <button type="submit" class="submit-btn" :disabled="isSubmitting">
@@ -136,6 +140,22 @@ input:focus, textarea:focus {
   color: #ef4444;
   font-size: 0.8rem;
   margin-top: 0.3rem;
+}
+.notification {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.notification.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+.notification.error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
 }
 .submit-btn {
   background: var(--accent-color);
